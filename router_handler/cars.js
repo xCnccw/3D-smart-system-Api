@@ -31,7 +31,7 @@ exports.deletecars = (req, res) => {
 exports.addcars = (req, res) => {
     const carinfo = req.body
     const sql = `insert into cars set ?`
-    db.query(sql, { id: carinfo.id, name: carinfo.name, license: carinfo.license, objectlistId: carinfo.objectlistId, createdAt: new Date(), updatedAt: new Date() }, function (err, results) {
+    db.query(sql, { name: carinfo.name, license: carinfo.license, objectlistId: carinfo.objectlistId, createdAt: new Date(), updatedAt: new Date() }, function (err, results) {
         // res.cc(userinfo.id)
         res.cc(carinfo)
     })

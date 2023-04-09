@@ -27,7 +27,7 @@ exports.deletebuildings = (req, res) => {
 exports.addbuildings = (req, res) => {
     const buildinginfo = req.body
     const sql = `insert into buildings set ?`
-    db.query(sql, { id: buildinginfo.id, name: buildinginfo.name, livecount: buildinginfo.livecount, floorcount: buildinginfo.floorcount, checkinrate: buildinginfo.checkinrate, objectlistId: buildinginfo.objectlistId, createdAt: new Date(), updatedAt: new Date() }, function (err, results) {
+    db.query(sql, { name: buildinginfo.name, livecount: buildinginfo.livecount, floorcount: buildinginfo.floorcount, checkinrate: buildinginfo.checkinrate, objectlistId: buildinginfo.objectlistId, createdAt: new Date(), updatedAt: new Date() }, function (err, results) {
         res.cc(buildinginfo)
     })
 }

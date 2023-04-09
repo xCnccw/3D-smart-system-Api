@@ -7,7 +7,7 @@ const config = require('../config')
 //导入数据库操作模块
 const db = require('../db/ index')
 
-//获取车辆信息
+//获取图表信息
 exports.chartslist = (req, res) => {
     // const userinfo = req.body
     const sql = `select * from raycharts`
@@ -36,7 +36,7 @@ exports.chartslist = (req, res) => {
 //     })
 // }
 
-//修改车辆信息
+//修改图表信息
 exports.updatecharts = (req, res) => {
     const chartinfo = req.body
     const sql = `update raycharts set ? where id = ?`

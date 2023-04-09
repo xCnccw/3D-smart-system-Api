@@ -98,7 +98,7 @@ exports.deleteuser = (req, res) => {
 exports.adduser = (req, res) => {
     const userinfo = req.body
     const sql = `insert into users set ?`
-    db.query(sql, { id: userinfo.id, username: userinfo.username, type: userinfo.type, createdAt: new Date(), updatedAt: new Date() }, function (err, results) {
+    db.query(sql, { username: userinfo.username, type: userinfo.type, createdAt: new Date(), updatedAt: new Date() }, function (err, results) {
         // res.cc(userinfo.id)
         res.cc(userinfo)
     })
