@@ -1,12 +1,18 @@
-const express = require('express')
-const router = express.Router()
-// 导入用户路由处理函数模块
-const chartsHandler = require('../router_handler/charts')
-//获取车辆列表
-router.post('/charts/list', chartsHandler.chartslist)
-//修改车辆信息
-router.post('/charts/update', chartsHandler.updatecharts)
+const express = require("express");
+const router = express.Router();
 
+const chartsHandler = require("../router_handler/charts");
 
+router.post("/raycharts/list", chartsHandler.raychartslist);
 
-module.exports = router
+router.post("/raycharts/update", chartsHandler.updateraycharts);
+
+router.post("/barcharts/list", chartsHandler.barchartslist);
+
+router.post("/barcharts/update", chartsHandler.updatebarcharts);
+
+router.post("/buildingdetails/list", chartsHandler.buildingdetailslist);
+
+router.post("/buildingdetails/update", chartsHandler.updatebuilding);
+
+module.exports = router;
