@@ -42,7 +42,15 @@ exports.updatecars = (req, res) => {
     const carinfo = req.body
     const sql = `update cars set ? where id = ?`
     db.query(sql, [{ id: carinfo.id, name: carinfo.name, license: carinfo.license, objectlistId: carinfo.objectlistId, createdAt: new Date(), updatedAt: new Date() }, carinfo.id], function (err, results) {
-        // res.cc(userinfo.id)
         res.cc(carinfo)
+    })
+}
+
+//修改车辆状态
+exports.updatecars = (req, res) => {
+    const carinfo = req.body
+    const sql = `update cars set ? where id = ?`
+    db.query(sql, [{ objectlistId: carinfo.objectlistId }, carinfo.id], function (err, results) {
+        res.send("修改成功")
     })
 }
