@@ -56,6 +56,9 @@ app.use('/api', carsRouter)
 const buildingsRouter = require('./router/buildings')
 app.use('/api', buildingsRouter)
 
+const buildingdetailsRouter = require('./router/buildingdetails')
+app.use('/api', buildingdetailsRouter)
+
 const chartsRouter = require('./router/charts')
 app.use('/api', chartsRouter)
 
