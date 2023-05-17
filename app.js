@@ -62,7 +62,8 @@ app.use('/api', buildingdetailsRouter)
 const chartsRouter = require('./router/charts')
 app.use('/api', chartsRouter)
 
-
+const notificationsRouter = require('./router/notifications')
+app.use('/api', notificationsRouter)
 
 
 // 错误中间件
