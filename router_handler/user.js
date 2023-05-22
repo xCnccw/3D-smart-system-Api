@@ -111,12 +111,12 @@ exports.adduser = (req, res) => {
     sql,
     {
       username: userinfo.username,
+      password: userinfo.password,
       type: userinfo.type,
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     function (err, results) {
-      // res.cc(userinfo.id)
       res.cc(userinfo);
     }
   );
@@ -130,8 +130,8 @@ exports.updateuser = (req, res) => {
     sql,
     [
       {
-        id: userinfo.id,
         username: userinfo.username,
+        password: userinfo.password,
         type: userinfo.type,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -139,7 +139,6 @@ exports.updateuser = (req, res) => {
       userinfo.id,
     ],
     function (err, results) {
-      // res.cc(userinfo.id)
       res.cc(userinfo);
     }
   );
@@ -148,7 +147,6 @@ exports.updateuser = (req, res) => {
 //修改个人密码
 exports.updatepwd = (req, res) => {
   const info = req.body;
-  // console.log(info.newpwd, id);
   const sql = `update users set ? where id = ? and password = ?`;
   db.query(
     sql,
