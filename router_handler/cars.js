@@ -64,7 +64,6 @@ exports.updatecars = (req, res) => {
       res.cc(carinfo);
     }
   );
-  console.log(carinfo, 888888);
 };
 
 //修改车辆状态

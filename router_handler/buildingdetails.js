@@ -14,7 +14,6 @@ exports.buildingdetailslist = (req, res) => {
     db.query(sql, function (err, results) {
         res.send(results)
     })
-    console.log('buildingdetails');
 }
 
 // exports.deletebuildingdetails = (req, res) => {

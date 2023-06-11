@@ -64,7 +64,6 @@ exports.login = (req, res) => {
     if (err) return res.cc(err);
     // 执行 SQL 语句成功，但是查询到数据条数不等于 1
     if (results.length !== 1) return res.cc("登录失败！");
-    console.log(userinfo.password, results[0].password);
     if (userinfo.password !== results[0].password) {
       return res.cc("密码错误");
     }
@@ -75,7 +74,6 @@ exports.login = (req, res) => {
     const tokenStr = jwt.sign(user, config.jwtSecretKey, {
       expiresIn: config.expiresIn,
     });
-    console.log(tokenStr);
     res.send({
       status: 0,
       message: "登录成功",

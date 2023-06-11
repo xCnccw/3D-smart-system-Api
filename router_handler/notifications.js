@@ -41,7 +41,6 @@ exports.addnotifications = (req, res) => {
 
 exports.updatenotifications = (req, res) => {
   const ntinfo = req.body;
-  console.log(ntinfo, "888888");
   const sql = `update notifications set ? where id = ?`;
   db.query(
     sql,
